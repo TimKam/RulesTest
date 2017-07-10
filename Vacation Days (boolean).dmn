@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<definitions namespace="http://www.signavio.com/dmn/1.1/diagram/26cff1ec7bd1492883dd5d566b691c57.xml" exporterVersion="11.3.0" name="Vacation Days (boolean)" id="id-16289489d3cf43d2b222efed4f70b998" sigExt:revisionId="d32a7f43bd2545aea106ebc33f8df115" sigExt:revisionNumber="6" xmlns="http://www.omg.org/spec/DMN/20151101/dmn.xsd" xmlns:sig="http://www.signavio.com/dmn/1.1/diagram/26cff1ec7bd1492883dd5d566b691c57.xml" xmlns:sigExt="http://www.signavio.com/schema/dmn/1.1/" xmlns:feel="http://www.omg.org/spec/FEEL/20140401">
+    <extensionElements/>
+    <itemDefinition isCollection="false" name="extraDaysCase2" id="id-6b1e9b71826883ac875452e0be19bfbd" label="Extra Days Case 2">
+        <typeRef>feel:boolean</typeRef>
+    </itemDefinition>
+    <itemDefinition isCollection="false" name="age" id="id-77b403135d6520cdc145d25a185e3b54" label="Age" sigExt:glossaryId="2e53b82026124e0c8f4689bd8d32b9af">
+        <typeRef>feel:number</typeRef>
+    </itemDefinition>
+    <itemDefinition isCollection="false" name="totalVacationDays" id="id-de80b2322a84ce75406f38acac1a7c6a" label="Total Vacation Days">
+        <typeRef>feel:number</typeRef>
+    </itemDefinition>
+    <itemDefinition isCollection="false" name="yearsOfService" id="id-97649aed7ebf76d3b16f949a01d4c608" label="Years of Service" sigExt:glossaryId="b9983b1dbd6b45bb8e01c02de187a5c2">
+        <typeRef>feel:number</typeRef>
+    </itemDefinition>
+    <itemDefinition isCollection="false" name="extraDaysCase1" id="id-43901e6bd8f79bb9c6891fffeb2bbd2f" label="Extra Days Case 1">
+        <typeRef>feel:boolean</typeRef>
+    </itemDefinition>
+    <itemDefinition isCollection="false" name="extraDaysCase3" id="id-b497530ee94305ca6c970e5c4909f682" label="Extra Days Case 3">
+        <typeRef>feel:boolean</typeRef>
+    </itemDefinition>
+    <inputData name="yearsOfService" id="id-5048911b2f641cdf862aa71a747d7f51" label="Years of Service" sigExt:shapeId="sid-638E2DEC-D57B-4A4F-98E0-229D7FFE4A6A" sigExt:diagramId="26cff1ec7bd1492883dd5d566b691c57">
+        <extensionElements/>
+        <variable typeRef="sig:yearsOfService" name="yearsOfService" id="id-5048911b2f641cdf862aa71a747d7f51_variable"/>
+    </inputData>
+    <inputData name="age" id="id-94bc5412e6bd1a7a61d1792e052b85f9" label="Age" sigExt:shapeId="sid-CC03453E-92F4-4D93-8946-ED7E90EFB863" sigExt:diagramId="26cff1ec7bd1492883dd5d566b691c57">
+        <extensionElements/>
+        <variable typeRef="sig:age" name="age" id="id-94bc5412e6bd1a7a61d1792e052b85f9_variable"/>
+    </inputData>
+    <decision name="extraDaysCase2" id="id-9b89867aed9f3a5c268bdbc8edca5b4a" label="Extra Days Case 2" sigExt:shapeId="sid-902F852A-ED85-416F-B933-F986AE536E34" sigExt:diagramId="26cff1ec7bd1492883dd5d566b691c57">
+        <extensionElements/>
+        <variable typeRef="sig:extraDaysCase2" name="Extra Days Case 2" id="id-9b89867aed9f3a5c268bdbc8edca5b4a_variable"/>
+        <informationRequirement>
+            <requiredInput href="#id-94bc5412e6bd1a7a61d1792e052b85f9"/>
+        </informationRequirement>
+        <informationRequirement>
+            <requiredInput href="#id-5048911b2f641cdf862aa71a747d7f51"/>
+        </informationRequirement>
+        <decisionTable hitPolicy="FIRST">
+            <input id="id-f31809b82822e00d956b97404d83ff1c" label="Age">
+                <inputExpression>
+                    <text>age</text>
+                </inputExpression>
+            </input>
+            <input id="id-cbe6d00dd572f6d2bf0a7ec38a609556" label="Years of Service">
+                <inputExpression>
+                    <text>yearsOfService</text>
+                </inputExpression>
+            </input>
+            <output name="extraDaysCase2" typeRef="feel:boolean" id="id-184e576a9ffead373ec36427da3da2cf" label="Extra Days Case 2"/>
+            <rule id="id-b083fb0568c2ba2b736816843567a861">
+                <description>string(-)</description>
+                <inputEntry>
+                    <text>-</text>
+                </inputEntry>
+                <inputEntry>
+                    <text>&gt;= 30</text>
+                </inputEntry>
+                <outputEntry>
+                    <text>true</text>
+                </outputEntry>
+            </rule>
+            <rule id="id-a8d78356cd3ce402e15c4d16fe6bb325">
+                <description>string(-)</description>
+                <inputEntry>
+                    <text>&gt;= 60</text>
+                </inputEntry>
+                <inputEntry>
+                    <text>-</text>
+                </inputEntry>
+                <outputEntry>
+                    <text>true</text>
+                </outputEntry>
+            </rule>
+            <rule id="id-6e8731b5511808d1ef6a6f9f4b69aa80">
+                <description>string(-)</description>
+                <inputEntry>
+                    <text>-</text>
+                </inputEntry>
+                <inputEntry>
+                    <text>-</text>
+                </inputEntry>
+                <outputEntry>
+                    <text>false</text>
+                </outputEntry>
+            </rule>
+        </decisionTable>
+    </decision>
+    <decision name="extraDaysCase1" id="id-77739c74851ac92baf11f95632837e6d" label="Extra Days Case 1" sigExt:shapeId="sid-9A360CA9-035A-42F5-BFF7-67C3FE30E552" sigExt:diagramId="26cff1ec7bd1492883dd5d566b691c57">
+        <extensionElements/>
+        <variable typeRef="sig:extraDaysCase1" name="Extra Days Case 1" id="id-77739c74851ac92baf11f95632837e6d_variable"/>
+        <informationRequirement>
+            <requiredInput href="#id-94bc5412e6bd1a7a61d1792e052b85f9"/>
+        </informationRequirement>
+        <informationRequirement>
+            <requiredInput href="#id-5048911b2f641cdf862aa71a747d7f51"/>
+        </informationRequirement>
+        <decisionTable hitPolicy="FIRST">
+            <input id="id-23de05ced652bba87adbc5b7d2e89d5b" label="Age">
+                <inputExpression>
+                    <text>age</text>
+                </inputExpression>
+            </input>
+            <input id="id-1e8b2fd8ea808ce1f5b46ef5ea5c97b3" label="Years of Service">
+                <inputExpression>
+                    <text>yearsOfService</text>
+                </inputExpression>
+            </input>
+            <output name="extraDaysCase1" typeRef="feel:boolean" id="id-d6d301fe774ee7f9ee82f2063c59a47c" label="Extra Days Case 1"/>
+            <rule id="id-1ef49fe3c479be81597899bdf26f713b">
+                <description>string(-)</description>
+                <inputEntry>
+                    <text>&lt; 18</text>
+                </inputEntry>
+                <inputEntry>
+                    <text>-</text>
+                </inputEntry>
+                <outputEntry>
+                    <text>true</text>
+                </outputEntry>
+            </rule>
+            <rule id="id-ccecb17ef96166baeaa224092123c5c4">
+                <description>string(-)</description>
+                <inputEntry>
+                    <text>&gt;= 60</text>
+                </inputEntry>
+                <inputEntry>
+                    <text>-</text>
+                </inputEntry>
+                <outputEntry>
+                    <text>true</text>
+                </outputEntry>
+            </rule>
+            <rule id="id-bea531ee08b47deef4431e3eeff4ec91">
+                <description>string(-)</description>
+                <inputEntry>
+                    <text>-</text>
+                </inputEntry>
+                <inputEntry>
+                    <text>&gt;= 30</text>
+                </inputEntry>
+                <outputEntry>
+                    <text>true</text>
+                </outputEntry>
+            </rule>
+            <rule id="id-af328dfa960396bdfe483d2a556980e2">
+                <description>string(-)</description>
+                <inputEntry>
+                    <text>-</text>
+                </inputEntry>
+                <inputEntry>
+                    <text>-</text>
+                </inputEntry>
+                <outputEntry>
+                    <text>false</text>
+                </outputEntry>
+            </rule>
+        </decisionTable>
+    </decision>
+    <decision name="totalVacationDays" id="id-a05b539d265b080efbac9f6878109ff0" label="Total Vacation Days" sigExt:shapeId="sid-3E24701E-8637-4755-A1F9-BED28A15493A" sigExt:diagramId="26cff1ec7bd1492883dd5d566b691c57">
+        <extensionElements/>
+        <variable typeRef="sig:totalVacationDays" name="Total Vacation Days" id="id-a05b539d265b080efbac9f6878109ff0_variable"/>
+        <informationRequirement>
+            <requiredDecision href="#id-9b89867aed9f3a5c268bdbc8edca5b4a"/>
+        </informationRequirement>
+        <informationRequirement>
+            <requiredDecision href="#id-77739c74851ac92baf11f95632837e6d"/>
+        </informationRequirement>
+        <informationRequirement>
+            <requiredDecision href="#id-6af913ec242446596893652737572b35"/>
+        </informationRequirement>
+        <decisionTable hitPolicy="COLLECT" aggregation="SUM">
+            <input id="id-bc8bdf09c4385f0b0a96e5a016c471e0" label="Extra Days Case 1">
+                <inputExpression>
+                    <text>extraDaysCase1</text>
+                </inputExpression>
+            </input>
+            <input id="id-ed40c8c26530a03ef17ce7eb7dbe9120" label="Extra Days Case 2">
+                <inputExpression>
+                    <text>extraDaysCase2</text>
+                </inputExpression>
+            </input>
+            <input id="id-15135b93583e3cb66ad4c98bac27e907" label="Extra Days Case 3">
+                <inputExpression>
+                    <text>extraDaysCase3</text>
+                </inputExpression>
+            </input>
+            <output name="totalVacationDays" typeRef="feel:number" id="id-a1084ec17668a631f33b90e408c4005b" label="Total Vacation Days"/>
+            <rule id="id-7a49308f9b0fb45b342691fc0dc471fc">
+                <description>string("Base days")</description>
+                <inputEntry>
+                    <text>-</text>
+                </inputEntry>
+                <inputEntry>
+                    <text>-</text>
+                </inputEntry>
+                <inputEntry>
+                    <text>-</text>
+                </inputEntry>
+                <outputEntry>
+                    <text>22</text>
+                </outputEntry>
+            </rule>
+            <rule id="id-9af19ceac3533a75a4de206f70f9599b">
+                <description>string("Case 1")</description>
+                <inputEntry>
+                    <text>true</text>
+                </inputEntry>
+                <inputEntry>
+                    <text>-</text>
+                </inputEntry>
+                <inputEntry>
+                    <text>-</text>
+                </inputEntry>
+                <outputEntry>
+                    <text>5</text>
+                </outputEntry>
+            </rule>
+            <rule id="id-0515e0f2de47d170b0648ade16e4a63d">
+                <description>string("Case 2")</description>
+                <inputEntry>
+                    <text>-</text>
+                </inputEntry>
+                <inputEntry>
+                    <text>true</text>
+                </inputEntry>
+                <inputEntry>
+                    <text>-</text>
+                </inputEntry>
+                <outputEntry>
+                    <text>3</text>
+                </outputEntry>
+            </rule>
+            <rule id="id-7f579e85bd342ef3216e4f8c5e776817">
+                <description>string("Case 3")</description>
+                <inputEntry>
+                    <text>false</text>
+                </inputEntry>
+                <inputEntry>
+                    <text>-</text>
+                </inputEntry>
+                <inputEntry>
+                    <text>true</text>
+                </inputEntry>
+                <outputEntry>
+                    <text>2</text>
+                </outputEntry>
+            </rule>
+        </decisionTable>
+    </decision>
+    <decision name="extraDaysCase3" id="id-6af913ec242446596893652737572b35" label="Extra Days Case 3" sigExt:shapeId="sid-A15E4BB1-E6FD-48CE-9BE2-8C44F6CCBD73" sigExt:diagramId="26cff1ec7bd1492883dd5d566b691c57">
+        <extensionElements/>
+        <variable typeRef="sig:extraDaysCase3" name="Extra Days Case 3" id="id-6af913ec242446596893652737572b35_variable"/>
+        <informationRequirement>
+            <requiredInput href="#id-94bc5412e6bd1a7a61d1792e052b85f9"/>
+        </informationRequirement>
+        <informationRequirement>
+            <requiredInput href="#id-5048911b2f641cdf862aa71a747d7f51"/>
+        </informationRequirement>
+        <decisionTable hitPolicy="FIRST">
+            <input id="id-927c6670336f01b3f07af071e83d5b01" label="Age">
+                <inputExpression>
+                    <text>age</text>
+                </inputExpression>
+            </input>
+            <input id="id-e7992f0dae658198bf73ee9eed34706f" label="Years of Service">
+                <inputExpression>
+                    <text>yearsOfService</text>
+                </inputExpression>
+            </input>
+            <output name="extraDaysCase3" typeRef="feel:boolean" id="id-1ff7aa69d498b74a706aa3daed38cffa" label="Extra Days Case 3"/>
+            <rule id="id-7cd02934d37b8dd7809635fcf60faa19">
+                <description>string(-)</description>
+                <inputEntry>
+                    <text>-</text>
+                </inputEntry>
+                <inputEntry>
+                    <text>[15..30)</text>
+                </inputEntry>
+                <outputEntry>
+                    <text>true</text>
+                </outputEntry>
+            </rule>
+            <rule id="id-28ec76687b22c271e43c0e0258d4952f">
+                <description>string(-)</description>
+                <inputEntry>
+                    <text>&gt;= 45</text>
+                </inputEntry>
+                <inputEntry>
+                    <text>-</text>
+                </inputEntry>
+                <outputEntry>
+                    <text>true</text>
+                </outputEntry>
+            </rule>
+            <rule id="id-2eb1b440493a25ddbe8a6ed18d032288">
+                <description>string(-)</description>
+                <inputEntry>
+                    <text>-</text>
+                </inputEntry>
+                <inputEntry>
+                    <text>-</text>
+                </inputEntry>
+                <outputEntry>
+                    <text>false</text>
+                </outputEntry>
+            </rule>
+        </decisionTable>
+    </decision>
+</definitions>
